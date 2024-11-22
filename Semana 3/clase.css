@@ -1,0 +1,30 @@
+    p {
+        color: red;
+        font-size: 30px;
+    }
+    img {
+        border-radius: 30px;
+        border-style: solid;
+        border-color: blue;
+        cursor: pointer;
+    }
+    img:hover{
+        width: 40%;
+    }
+
+    .colorVerde {
+        color: green;
+        font-size: 18px;
+    }
+
+    .colorAmarillo {
+        color: yellow;
+    }
+
+    #holamundo {
+        color: brown;
+    }
+
+    div>p {
+        color: blueviolet;
+    }
