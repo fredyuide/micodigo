@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Imágenes con TensorFlow.js</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Clasificación de Imágenes</h1>
+        <input type="file" id="imageInput" accept="image/*">
+        <img id="image" src="" alt="Imagen cargada" style="display:none;">
+        <p id="prediction">Predicción: Esperando imagen...</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
