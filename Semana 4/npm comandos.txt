@@ -1,0 +1,9 @@
+npm start
+npm run build
+npm test
+npm run eject
+
+npx create-react-app (nombre)
+npm install npm -g
+rm -rf node_modules
+npm install - npm i
