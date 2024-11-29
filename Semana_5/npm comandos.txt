@@ -1,4 +1,4 @@
-npx create-react-app evaluacion
+npx create-react-app freddy_semana5
 npm install npm -g
 rm -rf node_modules
 npm install - npm i
