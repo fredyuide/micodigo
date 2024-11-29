@@ -1,0 +1,9 @@
+npx create-react-app evaluacion
+npm install npm -g
+rm -rf node_modules
+npm install - npm i
+
+npm start
+npm run build
+npm test
+npm run eject
