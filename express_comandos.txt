@@ -1,0 +1,2 @@
+npm install -g express-generator 
+express back
