@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conectar Phantom Wallet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #wallet-address, #balance {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Conectar Phantom Wallet</h1>
+  <button id="connect-wallet">Conectar Wallet</button>
+  <div id="wallet-address"></div>
+  <div id="balance"></div>
+
+  <script type="module">
+    import { Connection, clusterApiUrl } from "https://cdn.jsdelivr.net/npm/@solana/web3.js/+esm";
+
+    console.log("El script está cargando correctamente.");
+
+    const connectButton = document.getElementById("connect-wallet");
+    const walletAddressDiv = document.getElementById("wallet-address");
+    const balanceDiv = document.getElementById("balance");
+
+    let wallet = null;
+
+    // Verificar si Phantom Wallet está disponible
+    if ("solana" in window) {
+      console.log("Phantom Wallet detectada.");
+      if (window.solana.isPhantom) {
+        console.log("Phantom Wallet está lista para conectarse.");
+      } else {
+        console.log("Otra wallet detectada, pero no es Phantom.");
+      }
+    } else {
+      console.log("Phantom Wallet no está instalada.");
+      alert("Por favor, instala Phantom Wallet para continuar.");
+    }
+
+    // Función para conectar Phantom Wallet
+    async function connectWallet() {
+      console.log("El botón funciona. Intentando conectar la wallet...");
+
+      if (wallet) {
+        console.log("Phantom Wallet ya está conectada.");
+        return;
+      }
+
+      try {
+        wallet = window.solana;
+        await wallet.connect();
+        const address = wallet.publicKey.toString();
+        console.log("Wallet conectada:", address);
+        walletAddressDiv.innerHTML = `<strong>Wallet Conectada:</strong> ${address}`;
+        fetchBalance(address);
+      } catch (error) {
+        console.error("Error al conectar la wallet:", error);
+        alert("No se pudo conectar a Phantom Wallet. Inténtalo de nuevo.");
+      }
+    }
+
+    // Función para obtener el balance de SOL
+    async function fetchBalance(address) {
+      try {
+        const connection = new Connection(clusterApiUrl("mainnet-beta"));
+        const balance = await connection.getBalance(new window.solana.PublicKey(address));
+        console.log("Balance obtenido:", balance);
+        balanceDiv.innerHTML = `<strong>Balance:</strong> ${(balance / 1e9).toFixed(4)} SOL`;
+      } catch (error) {
+        console.error("Error al obtener el balance:", error);
+        alert("Hubo un problema al obtener el balance. Revisa tu conexión o red.");
+      }
+    }
+
+    // Conectar el botón al evento
+    connectButton.addEventListener("click", connectWallet);
+  </script>
+</body>
+</html>

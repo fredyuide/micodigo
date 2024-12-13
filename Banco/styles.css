@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    background: #f9f9f9;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    background: #2ec08b;
+    color: #ffffff;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .btn-wallet {
+    background: #ffffff;
+    color: #2ec08b;
+    border: 2px solid #ffffff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-wallet:hover {
+    background: #ffffff;
+    color: #1f8066;
+    border: 2px solid #1f8066;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 2.5rem 0;
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2ec08b;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555555;
+  }
+  
+  .hero button {
+    background: #2ec08b;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .hero button:hover {
+    background: #1f8066;
+  }
+  
+  .features {
+    padding: 2rem 0;
+  }
+  
+  .features h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2ec08b;
+  }
+  
+  .features-grid {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .feature-item {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    background: #ffffff;
+  }
+  
+  .feature-item h4 {
+    color: #2ec08b;
+    margin-bottom: 1rem;
+  }
+  
+  .about, .contact {
+    padding: 2rem 0;
+  }
+  
+  .about h3, .contact h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2ec08b;
+  }
+  
+  .contact a {
+    color: #2ec08b;
+    text-decoration: none;
+  }
+  
+  .contact a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer {
+    background: #2ec08b;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
