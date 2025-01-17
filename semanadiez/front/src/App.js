@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import './style.css';  // Ajusta la ruta según la ubicación del archivo CSS
+
+import React, { useState } from 'react';
+import AutosList from './components/AutosList';
+import AutoForm from './components/AutoForm';
 
 function App() {
+  const [selectedAuto, setSelectedAuto] = useState(null);
+
+  const handleSave = () => {
+    setSelectedAuto(null);  // Cierra el formulario después de guardar
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {selectedAuto ? (
+        <AutoForm autoToEdit={selectedAuto} onSave={handleSave} />
+      ) : (
+        <AutosList />
+      )}
     </div>
   );
 }

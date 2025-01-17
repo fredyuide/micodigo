@@ -7,6 +7,13 @@ var logger = require('morgan');
 const sequelize = require('./database/connect');
 var app = express();
 
+const cors = require('cors');
+app.use(cors({
+  origin: 'http://localhost:4001',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
