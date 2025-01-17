@@ -1,4 +1,4 @@
-const modelTeacher = require("../models/teacher.models");
+const modelTeacher = require("../models/autos.models");
 
 const getList = async () => {
     const result = await modelTeacher.findAll();
