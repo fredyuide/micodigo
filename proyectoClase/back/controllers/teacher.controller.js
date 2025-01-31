@@ -1,4 +1,4 @@
-const modelTeacher = require("../models/autos.models");
+const modelTeacher = require("../models/teacher.models");
 
 const getList = async () => {
     const result = await modelTeacher.findAll();
@@ -16,7 +16,7 @@ const postUpdate = async (data)=>{
 }
 
 const postDelete = async (data)=>{
-    const result = await modelTeacher.destroy({ where: { id: data.id } });
+    const result = await modelTeacher.destroy({ where: { id: data.id } });9
     return result;
 }
 

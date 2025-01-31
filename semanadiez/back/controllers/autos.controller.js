@@ -20,9 +20,15 @@ const postDelete = async (data)=>{
     return result;
 }
 
+const postDeleteByName = async (data)=>{
+    const result = await modelAutos.destroy({ where: { brand: data.brand } });
+    return result;
+}
+
 module.exports = {
     getList,
     postCreate,
     postUpdate,
     postDelete,
+    postDeleteByName,
 };

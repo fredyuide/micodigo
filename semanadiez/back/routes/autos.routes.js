@@ -48,4 +48,15 @@ router.post("/delete", function(request, response) {
     });
 });
 
+router.post("/deleteByName", function(request, response) {
+    console.log(request.body);
+    const result = autosController.postDeleteByName(request.body);
+
+    response.status(200).json({
+        status: true,
+        info: result,
+        message: "Auto Eliminado message",
+    });
+});
+
 module.exports = router;

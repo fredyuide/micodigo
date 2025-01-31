@@ -11,6 +11,9 @@ const configs = {
             update: "/teacher/update",
             delete: "teacher/delete",
         },
+        initial: {
+            login: "/initial/login",
+        }
     },
 };
 
